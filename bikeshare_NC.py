@@ -1,4 +1,6 @@
 # PYTHON BIKESHARE PROJECT SUBMISSION BY NATHAN CHAPMAN
+# Now housed on Nathleigh's github repo 
+# https://github.com/Nathleigh/pdsnd_github.git
 
 import time
 import pandas as pd

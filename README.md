@@ -4,10 +4,14 @@
 Created this project and README file on 5 April 2023. 
 
 ### Project Title
-Udacity Project 3 - Bikeshare github
+Udacity Project 3 - Explore US Bikeshare Data
 
 ### Description
 Python code provides analytics of user data from bike share schemes in NYC, Chicago and Washington.
+•Popular times of travel 
+•Popular stations and trip
+•Trip duration
+•User info
 
 ### Files used
 bikeshare_NC.py 

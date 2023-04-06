@@ -21,4 +21,8 @@ washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+I searched for extra info on Python commands on
+•stackoverflow
+•w3schools
+•GeeksforGeeks
+and used the Python code template included in the Udacity .zip file

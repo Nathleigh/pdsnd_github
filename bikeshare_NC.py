@@ -10,6 +10,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 # filter can be applied to select any months from the list
 months_list = ['January', 'February', 'March', 'April', 'May', 'June']
+#length of lines which display between functions
+line_length = 40
 
 
 def get_filters():
@@ -70,7 +72,7 @@ def get_filters():
         day = 'all'
         month = "all"    
 
-    print('-'*40)
+    print('-'*line_length)
     return city, month, day
 
 
@@ -138,7 +140,7 @@ def time_stats(df):
     print("The most common hour of the day is:", popular_hour, "- with", pop_trip_count, "trips.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def station_stats(df):
@@ -161,7 +163,7 @@ def station_stats(df):
     print('Most Common trip from start to end:', popular_trip, "- with", pop_trip_count, "trips.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def trip_duration_stats(df):
@@ -179,7 +181,7 @@ def trip_duration_stats(df):
     print("Avg travel time: ", mean_travel_time)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def user_stats(df):
@@ -206,7 +208,7 @@ def user_stats(df):
         print("Most common year of birth:", common_year)
     
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def main():

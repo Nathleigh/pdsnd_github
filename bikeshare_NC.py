@@ -12,6 +12,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 # filter can be applied to select any months from the list
 months_list = ['January', 'February', 'March', 'April', 'May', 'June']
+#length of lines which display between functions
+line_length = 40
 
 
 def get_filters():
@@ -72,7 +74,7 @@ def get_filters():
         day = 'all'
         month = "all"    
 
-    print('-'*40)
+    print('-'*line_length)
     return city, month, day
 
 
@@ -140,7 +142,7 @@ def time_stats(df):
     print("The most common hour of the day is:", popular_hour, "- with", pop_trip_count, "trips.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def station_stats(df):
@@ -151,19 +153,19 @@ def station_stats(df):
 
     # display most commonly used start station
     popular_start = df['Start Station'].mode()[0]
-    print('Most Common Start Station:', popular_start)
+    print('Most Popular Start Station:', popular_start)
     
     # display most commonly used end station
     popular_end = df['End Station'].mode()[0]
-    print('Most Common End Station:', popular_end)
+    print('Most Popular End Station:', popular_end)
 
     # display most frequent combination of start station and end station trip
     popular_trip = df['trip'].mode()[0]
     pop_trip_count = df['trip'].value_counts()[popular_trip]
-    print('Most Common trip from start to end:', popular_trip, "- with", pop_trip_count, "trips.")
+    print('Most Popular trip from start to end:', popular_trip, "- with", pop_trip_count, "trips.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def trip_duration_stats(df):
@@ -181,7 +183,7 @@ def trip_duration_stats(df):
     print("Avg travel time: ", mean_travel_time)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def user_stats(df):
@@ -202,13 +204,15 @@ def user_stats(df):
     # Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
         print("Birth statistics:")
-        print("Earliest year of birth:", df['Birth Year'].min())
-        print("Most recent year of birth:", df['Birth Year'].max())
-        common_year = df['Birth Year'].mode()[0]
+        earliest_birth_year = int(df['Birth Year'].min())
+        print("Earliest year of birth:", earliest_birth_year)
+        latest_birth_year = int(df['Birth Year'].max())
+        print("Most recent year of birth:", latest_birth_year)
+        common_year = int(df['Birth Year'].mode()[0])
         print("Most common year of birth:", common_year)
     
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*line_length)
 
 
 def main():

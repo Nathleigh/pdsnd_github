@@ -221,16 +221,20 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        # Ask whether to print dataframe rows, and whether to print more
+        # Initialise row counting variables
         start_row = 0
         end_row = 5
+        # Ask whether to print dataframe rows
         print_data = input('\nWould you like to see the filtered trip data? Enter yes or no.\n')
         if print_data.lower() == 'yes':
             want_more = 'yes'
+            # loop to print 5 more rows each time user enters "yes"
             while want_more.lower() == 'yes':
                 print(df[start_row:end_row])
+                # increment row counts, ready for next portion of data
                 start_row +=5
                 end_row +=5
+                # prompt for further 5 rows
                 want_more = input('\nWould you like another 5 rows? Enter yes or no.\n')
         
         # prompt to run again or exit
